@@ -4,7 +4,7 @@ provider "aws" {
   secret_key = ""
 }
 resource "aws_iam_user" "my_user" {
-  name = "my-user"
+  name = "kuzmauser"
 }
 
 // Attach IAM user to the group
@@ -16,12 +16,12 @@ resource "aws_iam_group_membership" "my_membership" {
 
 // Create IAM group
 resource "aws_iam_group" "my_group" {
-  name = "my-group"
+  name = "kuzmagroup"
 }
 
 // Create IAM group policy
 resource "aws_iam_policy" "my_group_policy" {
-  name        = "kuzmatest"
+  name        = "my-group-policy"
   description = "My IAM group policy"
 
   policy = jsonencode({
